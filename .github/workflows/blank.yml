@@ -1,7 +1,7 @@
 name: flask 
 on:
   push: 
-      branches: [ master ]
+      branches: [ main ]
 
   job: 
       docker: #job's name is docker, rub job by ubuntu-lastet
