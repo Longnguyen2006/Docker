@@ -7,18 +7,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: configure
-
-    - name: docker build c++
-    run: |
-        docker build ./c++ -t aimvector/c++:1.0.0
+      - uses: actions/checkout@v2
+      - name: docker build c++
+        run: |     
+docker build ./c++ -t aimvector/c++:1.0.0
     
-    - name: docker build python
-      run: |
+      - name: docker build python
+        run: |
         docker build ./python -t aimvector/python:1.0.0
     
-    - name: docker push
-      run: |
+      - name: docker push
+        run: |
         docker push aimvector/c++:1.0.0
         docker push aimvector/python:1.0.0
