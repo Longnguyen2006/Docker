@@ -8,10 +8,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
    
-    - name: docker build nodejs
+    - name: docker build python
       run: |
         docker build ./python -t aimvector/python:1.0.0
-    - name: docker build golang
         
     - name: docker build c++
       run: |
