@@ -3,7 +3,7 @@ name: Docker Series Builds
 on: [push]
 
 jobs:
-  buildC++:
+  check:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
