@@ -34,3 +34,16 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          
+          - name: Build and Push Docker Igame
+          uses: docker/build-push-action@v2
+          id: docker_build
+          with:
+               context: ./
+               file: ./Dockerfile
+               builder:  ${{ steps.buildx.outputs.name }}
+               push: 
+               tags: ${{ secret.DOCKERHUB_USERNAME }}/flask-helloworld
+        
+           - name: Verify
+          run: echo ${{ steps.docker_build.outputs.digest }}
